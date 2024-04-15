@@ -15,7 +15,7 @@ func main() {
   cli := p0fclient.NewP0fClient("/path/to/socket")
   cli.Connect()
   parsedIP, _ := net.ParseIP("<some ip here")
-  res := cli.QueryIP(parsedIP)
+  res, _ := cli.QueryIP(parsedIP)
   # Do something with the response. In your application you will want to check the value of
   # resp.Status to see if there actually was a match or not. This can also be seen in cli/main.go
   # of this repository. 
