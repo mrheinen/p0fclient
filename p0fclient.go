@@ -91,6 +91,11 @@ func NewP0fClient(socketFile string) *P0fClient {
 	}
 }
 
+// Set the socket
+func (p *P0fClient) SetSocket(socket string) {
+	p.socketFile = socket
+}
+
 // Connect opens a connection to the p0f socket.
 func (p *P0fClient) Connect() error {
 	if _, err := os.Stat(p.socketFile); err != nil {
